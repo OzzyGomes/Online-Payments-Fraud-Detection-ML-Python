@@ -5,17 +5,27 @@ Esse tipo de analise atualmente é feito por bancos para garantir que o pagament
 Usei o dataset que pode ser encontrado <a href="https://www.kaggle.com/datasets/ealaxi/paysim1?resource=download">neste link</a> 
 que contém informações históricas sobre transações fraudulentas que podem ser usadas para detectar fraudes em pagamentos online.
 
-Abaixo estão todas as colunas do conjunto de dados que estou usando aqui:
+Abaixo estão todas as colunas do conjunto de dados que estou usando aqui: 
 
-step: representa uma unidade de tempo onde 1 step equivale a 1 hora
-type: tipo de transação online
-amount: o valor da transação
-nameOrig: cliente iniciando a transação
-oldbalanceOrg: saldo antes da transação
-newbalanceOrig: saldo após a transação
-nameDest: destinatário da transação
-oldbalanceDest: saldo inicial do destinatário antes da transação
-newbalanceDest: o novo saldo do destinatário após a transação
-isFraud: transação fraudulenta
+<strong>step:</strong> representa uma unidade de tempo onde 1 step equivale a 1 hora
 
-Agora que estão ciente da analise e do arquivo, acompanhe a analise no arquivo .py 
+<strong>type:</strong> tipo de transação online
+
+<strong>amount:</strong> o valor da transação
+
+<strong>nameOrig:</strong> cliente iniciando a transação
+
+<strong>oldbalanceOrg:</strong> saldo antes da transação
+
+<strong>newbalanceOrig:</strong> saldo após a transação
+
+<strong>nameDest:</strong> destinatário da transação
+
+<strong>oldbalanceDest:</strong> saldo inicial do destinatário antes da transação
+
+<strong>newbalanceDest:</strong> o novo saldo do destinatário após a transação
+
+<strong>isFraud:</strong> transação fraudulenta
+
+
+Agora que estão cientes da analise e do arquivo, acompanhe a analise no arquivo .py 
