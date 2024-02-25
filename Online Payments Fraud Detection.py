@@ -6,7 +6,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 #lê o arquivo das transações
-df = pd.read_csv('credit card.csv')
+df = pd.read_csv('cred_card_dataset.csv', 
+                 dtype={'step': int, 
+                        'type': str, 
+                        'amount': float, 
+                        'nameOrig': str,
+                        'oldbalanceOrg':float,
+                        "newbalanceOrig":float,
+                        "nameDest":str,
+                        "oldbalanceDest":float,
+                        "newbalanceDest":float,
+                        "isFraud":int,
+                        "isFlaggedFraud":int})
+
+df
 
 # verifica se existe algum valor nulo 
 df[df.isnull().sum(axis=1)>0]
@@ -21,7 +34,8 @@ figure = px.pie(df, values=quantity, names=transactions, title="Distribuição d
 figure.show()
 
 # verificando correlação entre os dados e a coluna isFraud
-correlation = df.corr()
+correlation = df[['step', 'amount', 'oldbalanceOrg', 'newbalanceOrig', 'oldbalanceDest', 'newbalanceDest', 'isFraud', 'isFlaggedFraud']].corr()
+#correlation = df.corr()
 correlation['isFraud'].sort_values(ascending=False)
 
 # com a função map() altero 'type' de dados categoricos para dados numericos 
@@ -47,5 +61,5 @@ model.score(xtest, ytest)
 
 #predição
 #features = [type, amount, oldbalanceOrg, newbalanceOrig]
-features = np.array([[4, 9000.60, 9000.60, 0.0]])
+features = np.array([[2, 300.00, 9000.60, 8700.60]])
 model.predict(features)
